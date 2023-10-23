@@ -1,0 +1,28 @@
+@model ToDo
+
+<form method="post" asp-action="Delete">
+    <input asp-for="ToDoId" hidden/>
+    <div class="border p-3 mt_4">
+        <div class="row pb-2">
+            <h2>Delete ToDo</h2>
+            <hr/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" disabled class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DueDate"></label>
+            <input type="date" disabled asp-for="DueDate" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width: 150px">Delete</button>
+        <a asp-controller="ToDo" asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
